@@ -20,7 +20,7 @@ public class Locaters {
         @FindBy (xpath = "(//a[@title='GİYİM & AKSESUAR'])[1]")
         public WebElement giyim_aksesuar;
 
-         @FindBy (xpath = "//a[@title='Kadın İç Giyim']")
+         @FindBy (xpath = "(//a[@class='js-filter-link '])[2]")
         public WebElement kadinicGiyim;
 
         @FindBy (xpath = "(//a[@title='Dizaltı Çorap'])[2]")
@@ -29,7 +29,10 @@ public class Locaters {
         @FindBy (xpath = "(//h3)[1]")
         public WebElement ilkUrun;
 
-        @FindBy (xpath = "//i[@class='icon-sepetekle']")
+        @FindBy (xpath = "//h1[text()='Penti Kadın 50 Denye Pantolon Çorabı Siyah']")
+        public WebElement ilkUrununDetaySayfasi;
+
+        @FindBy (xpath = "//button[@class='add-to-basket button green block with-icon js-add-basket']")
         public WebElement sepeteEkleButonu ;
 
         @FindBy (xpath = "(//a[@title='Sepeti Görüntüle'])[2]")
@@ -47,6 +50,21 @@ public class Locaters {
 
          @FindBy (xpath = "//button[@class='button block green']")
          public WebElement devamEtButonu;
+
+         @FindBy (xpath = "(//*[@title='Yeni adres oluştur'])[1]")
+         public WebElement yeniAdresEkle;
+
+         @FindBy (xpath = "(//*[@name='title'])[1]")
+         public WebElement adresBasligiTextBox;
+
+         @FindBy (xpath = "//*[@name='city']")
+         public WebElement ilTextBox;
+
+         @FindBy (xpath = "//*[@name='township']")
+         public WebElement ilceTextBox;
+
+         @FindBy (xpath = "//*[@name='district']")
+         public WebElement mahalleTextBox;
 
 
 

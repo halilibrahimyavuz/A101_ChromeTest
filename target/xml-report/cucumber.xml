@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="35.969">
-    <testcase classname="Kullanici A101 sitesine girerek" name="A101_TestCase01" time="35.631">
-        <failure message="element not interactable&#10;  (Session info: chrome=105.0.5195.102)&#10;Build info: version: '4.1.1', revision: 'e8fcc2cecf'&#10;System info: host: 'DESKTOP-FDRDA8K', ip: '172.27.192.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [8e648d7204c0996f5fce9b485c08896e, clickElement {id=0c73509e-4c76-43a3-9c16-d002a3f6a76c}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.102, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\DIJITA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:49320}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49320/devtoo..., se:cdpVersion: 105.0.5195.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Element: [[ChromeDriver: chrome on WINDOWS (8e648d7204c0996f5fce9b485c08896e)] -&gt; xpath: //a[@title='Dizaltı Çorap']]&#10;Session ID: 8e648d7204c0996f5fce9b485c08896e" type="org.openqa.selenium.ElementNotInteractableException"><![CDATA[* Kullanici A101 sitesine yonlenir..........................................passed
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="124.498">
+    <testcase classname="Kullanici A101 sitesine girerek" name="A101_TestCase01" time="124.163">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//h3)[1]&quot;}&#10;  (Session info: chrome=105.0.5195.102)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.1.1', revision: 'e8fcc2cecf'&#10;System info: host: 'DESKTOP-FDRDA8K', ip: '192.168.1.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [8efc88b7dd44fdec07e99bd7d6d8f573, findElement {using=xpath, value=(//h3)[1]}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.102, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\DIJITA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62146}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62146/devtoo..., se:cdpVersion: 105.0.5195.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 8efc88b7dd44fdec07e99bd7d6d8f573" type="org.openqa.selenium.NoSuchElementException"><![CDATA[* Kullanici A101 sitesine yonlenir..........................................passed
 * Kullanici anasayfadaki Giyim & Aksesuar sekmesine uzerinde bekler.........passed
-* Kullanici Kadin ic Giyim sekmesine tiklar.................................failed
-* Kullanici Dizalti Corap secenegine tiklar.................................skipped
-* Kullanici ilk urune tiklar................................................skipped
-* Kullanici acilan urunun siyah oldugu dogrular.............................skipped
+* Kullanici Kadin ic Giyim sekmesine tiklar.................................passed
+* Kullanici Dizalti Corap secenegine tiklar.................................passed
+* Kullanici ilk urune tiklar................................................passed
+* Kullanici acilan urunun siyah oldugu dogrular.............................failed
 * Kullanici Sepete ekle butonuna tiklar.....................................skipped
 * Kullanici Sepeti Goruntule butonuna tiklar................................skipped
 * Kullanici Sepeti Onayla butonuna tiklar...................................skipped
@@ -17,15 +17,15 @@
 * Kullanici odeme ekranina gidildigi dogrular...............................skipped
 
 StackTrace:
-org.openqa.selenium.ElementNotInteractableException: element not interactable
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//h3)[1]"}
   (Session info: chrome=105.0.5195.102)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.1.1', revision: 'e8fcc2cecf'
-System info: host: 'DESKTOP-FDRDA8K', ip: '172.27.192.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'
+System info: host: 'DESKTOP-FDRDA8K', ip: '192.168.1.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [8e648d7204c0996f5fce9b485c08896e, clickElement {id=0c73509e-4c76-43a3-9c16-d002a3f6a76c}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.102, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\DIJITA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:49320}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49320/devtoo..., se:cdpVersion: 105.0.5195.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (8e648d7204c0996f5fce9b485c08896e)] -> xpath: //a[@title='Dizaltı Çorap']]
-Session ID: 8e648d7204c0996f5fce9b485c08896e
+Command: [8efc88b7dd44fdec07e99bd7d6d8f573, findElement {using=xpath, value=(//h3)[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.102, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\DIJITA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62146}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62146/devtoo..., se:cdpVersion: 105.0.5195.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 8efc88b7dd44fdec07e99bd7d6d8f573
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
@@ -36,14 +36,15 @@ Session ID: 8e648d7204c0996f5fce9b485c08896e
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at jdk.proxy2/jdk.proxy2.$Proxy20.click(Unknown Source)
-	at stepdefinitions.StepDef01.kullanici_kadin_ic_giyim_sekmesine_tiklar(StepDef01.java:43)
-	at ✽.Kullanici Kadin ic Giyim sekmesine tiklar(file:///C:/Users/Dijital%20Sahne/Desktop/A101_ChromeTest/src/test/resources/features/A101_ChromeTest.feature:9)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy20.getText(Unknown Source)
+	at stepdefinitions.StepDef01.kullanici_acilan_urunun_siyah_oldugu_dogrular(StepDef01.java:67)
+	at ✽.Kullanici acilan urunun siyah oldugu dogrular(file:///C:/Users/Dijital%20Sahne/IdeaProjects/A101_ChromeTest/src/test/resources/features/A101_ChromeTest.feature:12)
 ]]></failure>
     </testcase>
 </testsuite>

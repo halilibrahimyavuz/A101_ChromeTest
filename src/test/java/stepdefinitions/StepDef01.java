@@ -4,16 +4,18 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import pages.Locaters;
 import utilities.Driver;
 
+import java.util.concurrent.TimeUnit;
+
 
 public class StepDef01 {
-
-
             Faker faker=new Faker();
-            Locaters locaters=new Locaters();
+            Locaters locaters=new Locaters(); //locateleri pages package altındaki Locaters clasında topladım.
             Actions actions=new Actions(Driver.getDriver());
 
 
@@ -33,47 +35,62 @@ public class StepDef01 {
              //Kullanici giyim ve aksesuar butonuna tiklar
                 Thread.sleep(2000);
                locaters.giyim_aksesuar.click();
-
-
-
         }
 
         @Given("Kullanici Kadin ic Giyim sekmesine tiklar")
         public void kullanici_kadin_ic_giyim_sekmesine_tiklar() throws InterruptedException {
-                Thread. sleep(2000);
+                Thread. sleep(1000);
                 locaters.kadinicGiyim.click();
-
 
         }
 
         @Given("Kullanici Dizalti Corap secenegine tiklar")
         public void kullanici_dizalti_corap_secenegine_tiklar() throws InterruptedException {
                 Thread. sleep(2000);
+
                 locaters.dizaltiCorap.click();
         }
 
         @Given("Kullanici ilk urune tiklar")
         public void kullanici_ilk_urune_tiklar() throws InterruptedException {
                 Thread. sleep(2000);
+                String beklenenText="Siyah";
+                String gerceklesenText=locaters.ilkUrun.getText();
+                System.out.println("*********************Secilen İlk Üründeki Text*********************** = " + locaters.ilkUrununDetaySayfasi.getText());
+                Assert.assertTrue(gerceklesenText.contains(beklenenText));
                 locaters.ilkUrun.click();
         }
 
-        @Given("Kullanici acilan urunun siyah oldugu dogrular")
-        public void kullanici_acilan_urunun_siyah_oldugu_dogrular() throws InterruptedException {
-              Thread. sleep(2000);
-              String beklenenText="siyah";
-              String gerceklesenText=locaters.ilkUrun.getText();
-              System.out.println("Secilen İlk Üründeki Text = " + gerceklesenText);
-              Assert.assertTrue(gerceklesenText.contains(beklenenText));
-        }
+     //   @Given("Kullanici acilan urunun siyah oldugu dogrular")
+     //   public void kullanici_acilan_urunun_siyah_oldugu_dogrular() throws InterruptedException {
+     //         Thread. sleep(2000);
+     //         String beklenenText="Siyah";
+     //         String gerceklesenText=locaters.ilkUrununDetaySayfasi.getAttribute("text()");
+     //         System.out.println("*********************Secilen İlk Üründeki Text*********************** = " + locaters.ilkUrununDetaySayfasi.getText());
+     //         Thread. sleep(2000);
+     //         Assert.assertTrue(gerceklesenText.contains(beklenenText));
+     //   }
 
-        @Given("Kullanici Sepete ekle butonuna tiklar")
+
+
+        @Given("Kullanici sepete Ekle butonuna tiklar")
         public void kullanici_sepete_ekle_butonuna_tiklar() throws InterruptedException {
                 Thread. sleep(2000);
-               locaters.ilkUrun.click();
-               Thread.sleep(1000);
-               locaters.sepeteEkleButonu.click();
+                locaters.sepeteEkleButonu.click();
         }
+
+        @Given("Kullanici bos gelen E-Mail textboxi doldurur")
+        public void kullanici_bos_gelen_e_mail_textboxi_doldurur() throws InterruptedException {
+                Thread. sleep(2000);
+                locaters.emailTextBox.click();
+                Thread. sleep(2000);
+                locaters.uyeOlmadanDevamEt.sendKeys("halilibrahimyavuz07@gmail.com");
+                Thread. sleep(2000);
+                locaters.devamEtButonu.click();
+        }
+
+
+
 
         @Given("Kullanici Sepeti Goruntule butonuna tiklar")
         public void kullanici_sepeti_goruntule_butonuna_tiklar() throws InterruptedException {
@@ -93,20 +110,43 @@ public class StepDef01 {
                 locaters.uyeOlmadanDevamEt.click();
         }
 
-        @Given("Kulanici bos gelen E-Mail textboxi doldurur")
-        public void kulanici_bos_gelen_e_mail_textboxi_doldurur() throws InterruptedException {
-                Thread. sleep(2000);
-                locaters.emailTextBox.click();
-                Thread. sleep(2000);
-                locaters.uyeOlmadanDevamEt.sendKeys("halilibrahimyavuz07@gmail.com");
-                Thread. sleep(2000);
-                locaters.devamEtButonu.click();
-        }
 
         @Given("Kullanici Yeni Adres olustur bolumunden adres olusturur")
-        public void kullanici_yeni_adres_olustur_bolumunden_adres_olusturur() {
-                // Write code here that turns the phrase above into concrete actions
-                throw new io.cucumber.java.PendingException();
+        public void kullanici_yeni_adres_olustur_bolumunden_adres_olusturur() throws InterruptedException {
+                Thread.sleep(2000);
+                locaters.yeniAdresEkle.click();
+                Thread.sleep(2000);
+               actions.click(locaters.adresBasligiTextBox)
+                                        .sendKeys("EV")
+                                        .keyDown(Keys.TAB)
+                                       .sendKeys("halil")
+                                       .keyDown(Keys.TAB)
+                                       .sendKeys("yavuz")
+                                       .keyDown(Keys.TAB)
+                                       .sendKeys("05458608504")
+                                      .perform();
+
+               Thread.sleep(2000);
+
+                        Select select=new Select(locaters.ilTextBox);
+                        select.selectByVisibleText("BURSA");
+
+                        select=new Select(locaters.ilceTextBox);
+                        select.selectByVisibleText("ORHANELİ");
+                Thread.sleep(1000);
+
+                        actions.click(locaters.mahalleTextBox)
+                                .sendKeys("Karıncalı")
+                                .keyDown(Keys.TAB)
+                                .sendKeys("Termik Santral Lojmanı")
+                                .keyDown(Keys.TAB)
+                                .sendKeys("07070")
+                                .keyDown(Keys.TAB)
+                                .click()
+                                .perform();
+
+
+
         }
 
         @Given("Kullanici Kaydet ve Devam et butonuna basar")
