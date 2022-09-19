@@ -56,8 +56,10 @@ public class StepDef01 {
                 Thread. sleep(2000);
                 String beklenenText="Siyah";
                 String gerceklesenText=locaters.ilkUrun.getText();
-                System.out.println("*********************Secilen İlk Üründeki Text*********************** = " + locaters.ilkUrununDetaySayfasi.getText());
+                System.out.println("*********************Secilen İlk Üründeki Text*********************** = " + gerceklesenText);
+                Thread. sleep(2000);
                 Assert.assertTrue(gerceklesenText.contains(beklenenText));
+                Thread. sleep(2000);
                 locaters.ilkUrun.click();
         }
 
@@ -84,7 +86,7 @@ public class StepDef01 {
                 Thread. sleep(2000);
                 locaters.emailTextBox.click();
                 Thread. sleep(2000);
-                locaters.uyeOlmadanDevamEt.sendKeys("halilibrahimyavuz07@gmail.com");
+                locaters.emailSendKeysTextBox.sendKeys("halilibrahimyavuz07@gmail.com");
                 Thread. sleep(2000);
                 locaters.devamEtButonu.click();
         }
@@ -116,13 +118,14 @@ public class StepDef01 {
                 Thread.sleep(2000);
                 locaters.yeniAdresEkle.click();
                 Thread.sleep(2000);
-               actions.click(locaters.adresBasligiTextBox)
+
+                actions.click(locaters.adresBasligiTextBox)
                                         .sendKeys("EV")
-                                        .keyDown(Keys.TAB)
+                                        .sendKeys(Keys.TAB)
                                        .sendKeys("halil")
-                                       .keyDown(Keys.TAB)
+                                       .sendKeys(Keys.TAB)
                                        .sendKeys("yavuz")
-                                       .keyDown(Keys.TAB)
+                                       .sendKeys(Keys.TAB)
                                        .sendKeys("05458608504")
                                       .perform();
 
@@ -135,30 +138,34 @@ public class StepDef01 {
                         select.selectByVisibleText("ORHANELİ");
                 Thread.sleep(1000);
 
-                        actions.click(locaters.mahalleTextBox)
-                                .sendKeys("Karıncalı")
-                                .keyDown(Keys.TAB)
-                                .sendKeys("Termik Santral Lojmanı")
-                                .keyDown(Keys.TAB)
-                                .sendKeys("07070")
-                                .keyDown(Keys.TAB)
-                                .click()
-                                .perform();
 
+                select=new Select(locaters.mahalleTextBox);
+                select.selectByVisibleText("KARINCALI MAH");
 
+                Thread.sleep(2000);
+                locaters.adresTextBox.sendKeys("site küme evleri no 10 daire 8 wdawdawdwdaw adwdadawdw wdawdawdawdaw wdawdw awdwawdawdwd wdwadwdawdawd ");
+
+                Thread.sleep(2000);
+                locaters.adresBolumundekiKaydetButonu.click();
 
         }
 
         @Given("Kullanici Kaydet ve Devam et butonuna basar")
-        public void kullanici_kaydet_ve_devam_et_butonuna_basar() {
-                // Write code here that turns the phrase above into concrete actions
-                throw new io.cucumber.java.PendingException();
+        public void kullanici_kaydet_ve_devam_et_butonuna_basar() throws InterruptedException {
+                Thread.sleep(2000);
+                locaters.mngKargoRadioButton.click();
+
+                Thread.sleep(2000);
+               locaters.kaydetVeDevamEtButonu.click();
         }
 
         @Given("Kullanici odeme ekranina gidildigi dogrular")
-        public void kullanici_odeme_ekranina_gidildigi_dogrular() {
-                // Write code here that turns the phrase above into concrete actions
-                throw new io.cucumber.java.PendingException();
+        public void kullanici_odeme_ekranina_gidildigi_dogrular() throws InterruptedException {
+                String bekleneEkran="Ödeme";
+                String gerceklesenEkran=locaters.odemeEkrani.getText();
+                System.out.println("gerceklesenEkran000000000000000000000000************ = " + gerceklesenEkran);
+                Thread.sleep(2000);
+                Assert.assertTrue(gerceklesenEkran.contains(bekleneEkran));
         }
 
 }

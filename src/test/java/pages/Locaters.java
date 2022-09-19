@@ -48,13 +48,16 @@ public class Locaters {
          @FindBy (xpath = "//*[text()='E-mail']")
          public WebElement emailTextBox;
 
+         @FindBy (xpath = "//*[@name='user_email']")
+         public WebElement emailSendKeysTextBox;
+
          @FindBy (xpath = "//button[@class='button block green']")
          public WebElement devamEtButonu;
 
          @FindBy (xpath = "(//*[@title='Yeni adres oluştur'])[1]")
          public WebElement yeniAdresEkle;
 
-         @FindBy (xpath = "(//*[@name='title'])[1]")
+         @FindBy (xpath = "//*[@placeholder='Ev adresim, iş adresim vb.']")
          public WebElement adresBasligiTextBox;
 
          @FindBy (xpath = "//*[@name='city']")
@@ -65,6 +68,21 @@ public class Locaters {
 
          @FindBy (xpath = "//*[@name='district']")
          public WebElement mahalleTextBox;
+
+        @FindBy (xpath = "//*[@name='line']")
+         public WebElement adresTextBox;
+
+        @FindBy (xpath = "//button[@class='button green js-set-country js-prevent-emoji']")
+         public WebElement adresBolumundekiKaydetButonu;
+
+        @FindBy (xpath = "(//div[@class='radio'])[4]")
+         public WebElement mngKargoRadioButton;
+
+        @FindBy (xpath = "//button[@class='button block green js-proceed-button']")
+         public WebElement kaydetVeDevamEtButonu;
+
+        @FindBy (xpath = "(//*[@class='section-hero'])[1]")
+         public WebElement odemeEkrani;
 
 
 
